@@ -111,3 +111,27 @@ print(f" la suma de las cifras es : {decena+unidad}")
 #Calcular las horas con horas = total_minutos // 60.
 #Calcular los minutos restantes con minutos = total_minutos % 60.
 
+
+total_minutos=float(input("ingresar los minutos"))
+horas=total_minutos//60
+minutos=total_minutos%60
+print(f"los minutos restantes  {float(horas-minutos)}")
+
+
+
+#Ejercicio 8: Calcular el promedio de 3 números
+
+#Enunciado:
+#Pide al usuario tres números y calcula su promedio.
+
+#Esquema de solución:
+
+#Pedir tres números al usuario.
+#Sumar los números.
+#Dividir entre 3 para obtener el promedio.
+
+numero1=float(input("ingresar el primer numero"))
+numero2=float(input("ingresar el segundo numero"))
+numero3=float(input("ingresar el tercer numero"))
+sumaNum=numero1+numero2+numero3
+print(f"el promedio es {float(sumaNum/3)}")
