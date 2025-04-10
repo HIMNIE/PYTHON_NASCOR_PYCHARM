@@ -100,4 +100,14 @@ unidad=NumeroEntero%10
 
 print(f" la suma de las cifras es : {decena+unidad}")
 
+#Ejercicio 7: Conversión de minutos a horas y minutos
+
+#Enunciado:
+#Dado un número de minutos, convierte ese valor a horas y minutos.
+
+#Esquema de solución:
+
+#Pedir al usuario los minutos (total_minutos).
+#Calcular las horas con horas = total_minutos // 60.
+#Calcular los minutos restantes con minutos = total_minutos % 60.
 
