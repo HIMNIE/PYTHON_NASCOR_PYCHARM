@@ -63,3 +63,77 @@ if esPar(numero_usuario):
     print("El número es par.")
 else:
     print("El número es impar.")
+
+
+# Cread una función a la que le pasemos un nombre y nos devuelva una cadena con un saludo
+# saludo("Ana") -> "Hola Ana"
+
+def saludo(nombre):
+    resultado = "Hola " + nombre
+    return resultado
+
+
+
+
+
+#<---------------------------> Solucion del prof <--------------------------------------->
+
+
+
+
+# Cread una función a la que le pasamos una cadena y una cantidad y nos devuelve la cadena repetida esa cantidad
+# repetir("Ana",3)->"AnaAnaAna"
+
+def repetir(cadena, cantidad):
+    # código que nos repita una cadena una cantidad de veces
+    # Variable que me servirá de 'acumulador'
+    resultado = ""
+    # Bucle que me recorra una serie de elementos o, como en este caso, que me repita algo un número
+    # determinado de veces
+    for i in range(0, cantidad):
+        # Hago la operación que sea: concatenar, sumar, contar, multiplicar...
+        resultado += cadena
+
+    return resultado
+
+
+def repetir2(cadena, cantidad):
+    return cadena * cantidad
+
+
+def nombreTriple(nombre):
+    return (f'{nombre}\n' * 3)  # Lo estamos imprimiendo directamente por la consola IMPURA
+
+
+nombreTriple('Jenn')
+
+
+# Cread una función a la que le pasamos un número y nos devuelve True si es par y False si no lo es
+# esPar(5)->False  esPar(80)->True
+
+def esPar(numero):
+    if numero % 2 == 0:
+        resultado = True
+    else:
+        resultado = False
+    return resultado
+
+
+def esParCompacta(numero):
+    # En general siempre que tenemos un if que devuelve true o false podemos devolver directamente la condición del if
+    return numero % 2 == 0
+
+
+repetida = repetir("Hola", 5)
+print(repetida)
+repetida = repetir2("Hola", 5)
+print(repetida)
+print("hola" * 5)
+print(nombreTriple("Ana"))
+nombrerepetido = nombreTriple("Federico")
+
+print(esPar(5))
+print(esPar(6))
+
+print(esParCompacta(5))
+print(esParCompacta(6))
