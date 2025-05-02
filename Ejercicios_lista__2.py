@@ -52,6 +52,88 @@ print(longitudPar(["aa", "bbb", "cccc", "ddddd"]))  # Resultado: ['aa', 'cccc']
 
 
 
+#SOLUCION_DEL_PROF
+
+
+# Definir el algoritmo
+# Los pasos que vamos a implementar para resolver el problema
+# La 'receta'
+# Divide y vencerás: un problema grande se compone de otros más pequeños
+# Lo primero es pensar ¿Cömo voy a resolver este problema?
+
+# Cread una función a la que le pasamos una lista de números y nos devuelva una lista
+# con el menor y el mayor
+# menorMayor([3,1,8,5])->[1,8]
+
+# Cual es el mayor y cual es el menor
+
+# Esta solución es más fácil
+def menorMayor(lista):
+    ordenada = sorted(lista)
+    return [ordenada[0], ordenada[-1]]
+
+
+# Esta solución es más eficiente, porque ordenar es algo muy costoso
+def menorMayor2(lista):
+    menor = lista[0]
+    mayor = lista[0]
+    for numero in lista:
+        if numero < menor:
+            menor = numero
+        if numero > mayor:
+            mayor = numero
+    return [menor, mayor]
+
+
+# Esto de aquí hay que evitarlo: No se modifican los parámetros que pasamos
+def menorMayor3(lista):
+    lista.sort()
+    menor = lista.pop(0)
+    mayor = lista.pop(-1)
+    return [menor, mayor]
+
+
+print(menorMayor([3, 1, 8, 5]))
+print(menorMayor2([3, 1, 8, 5]))
+
+milista = [2, 1, 6, 8, 33, 4, 12, 25]
+print(menorMayor3(milista))
+print(milista)
+
+
+# Cread una función a la que le pasamos una lista de nombres y nos devuelve una lista
+# con todos los nombres en minúsculas
+# minusculas(["Ana","Pep","Iu"])->["ana","pep","iu"]
+
+# Tener un sitio donde guardar el resultado
+# recorrer la lista
+# como pasar una cadena a minúsculas
+def minusculas(lista):
+    resultado = []
+    for elemento in lista:
+        resultado.append(elemento.lower())
+    return resultado
+
+
+print(minusculas(["Ana", "Pep", "Iu"]))
+
+
+# Cread una función a la que le pasamos una lista de cadenas y nos devuelve una lista
+# con las que tengan una longitud par
+# longitudPar(["aa","bbb","cccc","ddddd"])->["aa","cccc"]
+
+# Tener un sitio donde guardar el resultado
+# recorrer la lista
+# Si la longitud es par, lo añado a la lista
+def longitudPar(lista):
+    resultado = []
+    for elemento in lista:
+        if len(elemento) % 2 == 0:
+            resultado.append(elemento)
+    return resultado
+
+
+print(longitudPar(["aa", "bbb", "cccc", "ddddd"]))
 
 
 
@@ -61,6 +143,16 @@ print(longitudPar(["aa", "bbb", "cccc", "ddddd"]))  # Resultado: ['aa', 'cccc']
 
 
 
+
+def definirlafuncion(parametro1, parametros):
+# Codigo que hace cosas
+# 90% de las veces es:
+# Defino una o varias variables para almacenar resultados
+# recorro la lista
+# dentro de ese recorrido aplico la lógica que me soluciona el problema
+
+
+# devuelvo el resultado
 
 
 
