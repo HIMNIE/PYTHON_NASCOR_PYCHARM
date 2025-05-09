@@ -73,6 +73,85 @@ for p in proyecto:
         proyectos_caros.append(p)
 print("Proyectos con coste > 1000€:", proyectos_caros)
 
+#solucion del prof
+
+
+biblioteca = [
+    {"titulo": "El Quijote", "autor": "Cervantes", "precio": 20},
+    {"titulo": "Las olas", "autor": "Virginia Woolf", "precio": 17},
+    {"titulo": "Los detectives salvajes", "autor": "Roberto Bolaño", "precio": 23},
+    {"titulo": "Tom va a la escuela", "autor": "Rick Sánchez", "precio": 10}
+]
+
+# Para resolver los siguientes ejercicios podéis usar cualquier método de los vistos en clase
+
+# Calcular la suma de todos los precios
+
+# obtener precio
+# Haciendo el bucle de toda la vida y sumando los precios
+suma = 0
+for libro in biblioteca:
+    suma += libro["precio"]
+print(suma)
+# Comprension de listas obteniendo solo el precio, entonces ya puedo usar 'sum'
+precios = [libro["precio"] for libro in biblioteca]
+print(sum(precios))
+# Obteniendo los precios mediante el 'map' y una función lambda, después puedo usar 'sum'
+precios = list(map(lambda x: x["precio"], biblioteca))
+print(sum(precios))
+
+# Queremos obtener el libro con el precio más alto
+# Método tradicional con un for nos guardamos el más caro 'de momento'
+libroCaro = None
+precio = 0
+for libro in biblioteca:
+    # Si encontramos uno más caro nos lo quedamos
+    if libro["precio"] > precio:
+        precio = libro["precio"]
+        libroCaro = libro
+print(libroCaro)
+
+# Usar max junto con lambda para que busque el máximo de la propiedad 'precio'
+libroCaro = max(biblioteca, key=lambda x: x["precio"])
+print(libroCaro)
+
+# queremos ordenarlos por título
+
+# Ordenamos mediante título usando una lambda
+librosPorTitulo = sorted(biblioteca, key=lambda x: x["titulo"])
+print(librosPorTitulo)
+
+proyectos = [
+    {"nombre": "Análisis", "horas": 10, "precio": 60},
+    {"nombre": "Desarrollo", "horas": 50, "precio": 50},
+    {"nombre": "Implementación", "horas": 5, "precio": 70},
+    {"nombre": "Pruebas", "horas": 15, "precio": 40},
+]
+
+# Queremos calcular el coste total de todos los proyectos (horas*precio)
+
+total = 0
+for proyecto in proyectos:
+    total += proyecto["horas"] * proyecto["precio"]
+print(total)
+
+importes = [proyecto["horas"] * proyecto["precio"] for proyecto in proyectos]
+print(sum(importes))
+importes = list(map(lambda x: x["precio"] * x["horas"], proyectos))
+print(sum(importes))
+
+# El proyecto con mayor coste (horas*precio)
+mayorCoste = max(proyectos, key=lambda proyecto: proyecto["precio"] * proyecto["horas"])
+print(mayorCoste)
+# ordenar por número de horas
+porHoras = sorted(proyectos, key=lambda x: x["horas"])
+print(porHoras)
+# Filtrar los que cuesten más 1000 €
+
+caros = [proyecto for proyecto in proyectos if proyecto["horas"] * proyecto["precio"] > 1000]
+print(caros)
+caros = list(filter(lambda x: x["horas"] * x["precio"] > 1000, proyectos))
+print(caros)
 
 
 
