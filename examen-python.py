@@ -217,3 +217,64 @@ print(ordenCredito(clase))
 print(ordenarCredito(clase))
 print(mayorCredito(clase))
 print(mayorCredito2(clase))
+
+
+# Cread una función a la que le pasamos una cadena y una letra y nos devueve una
+# lista con las palabras que tienen esa letra
+
+def palabrasConLetra(cadena, letra):
+    palabras = cadena.split(" ")
+    resultado = []
+    for palabra in palabras:
+        if letra in palabra:
+            resultado.append(palabra)
+    return resultado
+
+
+def palabrasConLetra2(cadena, letra):
+    palabras = cadena.split(" ")
+    return [palabra for palabra in palabras if letra in palabra]
+
+
+print(palabrasConLetra("hola que tal yo mal", "a"))
+print(palabrasConLetra2("hola que tal yo mal", "a"))
+
+
+# Una función a la que le pasamos una cadena y nos devuelve una lista
+# con la primera letra de cada palabra
+
+def primeraLetra(cadena):
+    palabras = cadena.split(" ")
+    resultado = []
+    for palabra in palabras:
+        resultado.append(palabra[0])
+    return resultado
+
+
+def primeraLetra2(cadena):
+    palabras = cadena.split(" ")
+    return [palabra[0] for palabra in palabras]
+
+
+print(primeraLetra("hola que tal yo muy bien"))
+print(primeraLetra2("hola que tal yo muy bien"))
+
+
+# Cread una función a la que le pasamos una cadena y nos devuelve una lista de palabras
+# que empiecen y acaben con la misma letra
+def inicioFin(cadena):
+    palabras = cadena.split(" ")
+    resultado = []
+    for palabra in palabras:
+        if palabra[0] == palabra[-1]:
+            resultado.append(palabra)
+    return resultado
+
+
+def inicioFin2(cadena):
+    palabras = cadena.split(" ")
+    return [palabra for palabra in palabras if palabra[0] == palabra[-1]]
+
+
+print(inicioFin("hola ana como sales tan pronto"))
+print(inicioFin2("hola ana como sales tan pronto"))
